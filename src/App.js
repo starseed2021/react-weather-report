@@ -12,13 +12,13 @@ const App = () => {
     setTemperatureValue(newTemperature);
 
     // UPDATING THE COLORS TO DIFFERENT TEMPERATURES
-    if (newTemperature >= 45) {
+    if (newTemperature > 40 && newTemperature <= 50) {
       setTemperatureColor('chilly');
-    } else if (newTemperature >= 60) {
+    } else if (newTemperature > 50 && newTemperature <= 60) {
       setTemperatureColor('temperate');
-    } else if (newTemperature >= 70) {
+    } else if (newTemperature > 60 && newTemperature <= 75) {
       setTemperatureColor('warm');
-    } else if (newTemperature >= 85 && newTemperature <= 98) {
+    } else if (newTemperature > 75 && newTemperature <= 98) {
       setTemperatureColor('hot');
     }
   };
@@ -29,8 +29,16 @@ const App = () => {
 
     if (newTemperature < 30 && newTemperature >= 20) {
       setTemperatureColor('cold');
-    }
+    } else if (newTemperature > 40 && newTemperature <= 50) {
+      setTemperatureColor('chilly');
+    } else if (newTemperature > 50 && newTemperature <= 60) {
+      setTemperatureColor('temperate');
+    } else if (newTemperature > 60 && newTemperature <= 75) {
+      setTemperatureColor('warm');
+    } else if (newTemperature > 75 && newTemperature <= 98) {
+      setTemperatureColor('hot');
   };
+};
 
 
 	return (
