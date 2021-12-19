@@ -26,22 +26,23 @@ const App = () => {
   const decreaseTemperature = () => {
     const newTemperature = temperatureValue - 1;
     setTemperatureValue(temperatureValue - 1);
-
-    if (newTemperature < 30 && newTemperature >= 20) {
-      setTemperatureColor('cold');
-    } else if (newTemperature > 40 && newTemperature <= 50) {
-      setTemperatureColor('chilly');
-    } else if (newTemperature > 50 && newTemperature <= 60) {
-      setTemperatureColor('temperate');
-    } else if (newTemperature > 60 && newTemperature <= 75) {
+  
+    if (newTemperature > 75 && newTemperature <= 98) {
+    setTemperatureColor('hot');
+  } else if (newTemperature > 60 && newTemperature <= 75) {
       setTemperatureColor('warm');
-    } else if (newTemperature > 75 && newTemperature <= 98) {
-      setTemperatureColor('hot');
+  } else if (newTemperature > 50 && newTemperature <= 60) {
+      setTemperatureColor('temperate');
+  } else if (newTemperature > 40 && newTemperature <= 50) {
+    setTemperatureColor('chilly');
+  } else if (newTemperature < 30 && newTemperature >= 20) {
+      setTemperatureColor('cold');
   };
 };
 
 
 	return (
+    <section>
 		<div className='app-container'>
 			<div className='temperature-display-container'>
       <div className={`temperature-display ${temperatureColor}`}>{temperatureValue}°F</div>
@@ -51,6 +52,7 @@ const App = () => {
 				<button onClick={() => setTemperatureValue(decreaseTemperature)}>-</button>
 			</div>
 		</div>
+    </section>
 	);
 };
 
